@@ -1,3 +1,3 @@
 #!/bin/bash
 
-# Run your update commands here
+# Run your backup commands here
