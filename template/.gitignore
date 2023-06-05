@@ -1,0 +1,43 @@
+########## MACOS #########
+
+.DS_Store
+
+# Thumbnails
+._*
+
+# In root of volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+######### LINUX #########
+
+# backup files
+*~
+# In root of partition/disk
+.Trash-*
+# when an open file is removed but is still being accessed
+.nfs*
+
+######### SECRETS #########
+
+# Certificate Authority
+*.ca
+# Certificate
+*.crt
+*.csr
+*.der
+# Key database file
+*.kdb
+# OSCP request data
+*.org
+# PKCS #12
+*.p12
+# PEM-encoded certificate data
+*.pem
+# SSH Keys Folder
+.ssh

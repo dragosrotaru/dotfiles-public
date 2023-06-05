@@ -1,0 +1,33 @@
+{
+  "folders": [
+    {
+      "path": "."
+    },
+    {
+      "path": "../.dotfiles"
+    }
+  ],
+  "extensions": {
+    "recommendations": [
+      "esbenp.prettier-vscode",
+      "aaron-bond.better-comments",
+      "github.copilot",
+      "eamodio.gitlens",
+      "timonwong.shellcheck",
+      "wallabyjs.quokka-vscode",
+      "wallabyjs.wallaby-vscode"
+    ]
+  },
+  "settings": {
+    "prettier.enable": true,
+    "prettier.documentSelectors": ["**/*.svg"],
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll": true,
+      "source.fixAll.tslint": true,
+      "source.organizeImports": true
+    },
+    "debug.inlineValues": "on"
+  }
+}

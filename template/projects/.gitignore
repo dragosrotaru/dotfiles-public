@@ -1,0 +1,15 @@
+######### APPLICATION SPECIFIC #########
+
+# ENV
+.env
+
+# build and dependencies
+build
+bin
+dist
+lib
+node_modules
+
+# logs
+logs
+*.log
