@@ -30,14 +30,6 @@ there are 3 folders in this repository:
 - `scripts`: scripts which come in handy when provisioning or administering your machine. you can choose to copy scripts over into your own dotfiles if you wish.
 - `docs`: step by step instructions, and supporting documentation to help you understand how it works and why its done in a certain way
 
-## Publish Workflow
-
-- bump versions in package.json and in cli.ts
-- add to CHANGELOG
-- push to master
-- create a tag and release in github
-- the publish workflow will then publish to npm
-
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a PR or message me if you need help
