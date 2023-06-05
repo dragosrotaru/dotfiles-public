@@ -8,7 +8,7 @@ So you have a bunch of different software, and you arent sure what is configured
 
 First, make a list of all the software you have in your system. I like to start by hitting `Command + Shift + .` in finder and looking at my home directory dotfiles researching what each one is used for. Then I run commands like `brew bundle dump` and look at all the Brew apps installed, I look at the `Applications` folder, and at `npm -g list` (or whatever other package managers I have installed). Another place is `Library/Application Support`. I make a complete list of all the software I have which has configuration.
 
-Next, decide what you want to keep and how. you may want to use proprietary sync functionality using logins like for example firefox, Spotify or VSCode has. Alternatively you may want to store it in your dotfiles repo, or perhaps a secrets manager instead. Go down the list and make the decision one by one, until you have all of your valuable configurations saved. Be aware that some software makes it harder than others to store your config in your own system. For example, Firefox has no way of easily listing all the firefox extensions installed, and so I opted in to using the built-in sync feature with a login. 
+Next, decide what you want to keep and how. you may want to use proprietary sync functionality using logins like for example firefox, Spotify or VSCode has. Alternatively you may want to store it in your dotfiles repo, or perhaps a secrets manager instead. Go down the list and make the decision one by one, until you have all of your valuable configurations saved. Be aware that some software makes it harder than others to store your config in your own system. For example, Firefox has no way of easily listing all the firefox extensions installed, and so I opted in to using the built-in sync feature with a login.
 
 ## Secrets, shhh 🤫
 
@@ -30,7 +30,6 @@ Lastly, we add an alias, `dotfiles` so we can easily work with the repository.
 
 As I mentioned prior it is also highly recommended to setup a `.gitignore` to prevent uploading files/directories you dont want in there.
 
-
 ## Structure
 
 Here is the basic structure of this dotfiles template:
@@ -41,4 +40,6 @@ Here is the basic structure of this dotfiles template:
 
 Every other file in my dotfiles repo is stored at whatever default location it is expected by the applications which use it.
 
+## Adding Cron Jobs
 
+LaunchCTL is a useful command line tool for working with cron jobs on mac. Adding log files is super helpful as well, it makes troubleshooting your script much easier. you can also use `launchctl list | grep "dotfiles"` (dotfiles is the namespace I like to use to make it easy to search) followed by `launchctl error <number>` to figure out what the error codes mean.
