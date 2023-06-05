@@ -1,0 +1,12 @@
+[color]
+	ui = true
+[core]
+	excludesfile = ~/.gitignore
+[user]
+	name = John Doe
+	email = john@example.com
+	signingkey = SIGN_KEY
+[commit]
+	gpgsign = true
+[url "git@github.com:"]
+	insteadOf = https://github.com/

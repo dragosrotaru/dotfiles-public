@@ -1,0 +1,7 @@
+tap "homebrew/bundle"
+brew "bash"
+brew "gnupg"
+cask "firefox"
+cask "gpg-suite"
+cask "launchcontrol"
+cask "visual-studio-code"
