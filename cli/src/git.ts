@@ -1,12 +1,9 @@
 // TODO improve performance by running these in parallel or memoizing
 // TODO add tests
 
-import { exec } from "child_process";
 import fs from "fs";
 import path from "path";
-import util from "util";
-
-export const execAsync = util.promisify(exec);
+import { execAsync } from "./util";
 
 export const execGitAsync = async (command: string, repo: string) => {
     const { stdout, stderr } = await execAsync(command, { cwd: repo });
