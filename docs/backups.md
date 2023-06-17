@@ -67,6 +67,7 @@ below are some that are important to know. Some are old school, some ubiquitous,
 
 ## Useful References
 
+https://replicated.cc/
 https://sea-of-stuff.github.io/comparison.htm
 https://www.filestash.app/
 https://www.borgbackup.org/
