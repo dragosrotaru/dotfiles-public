@@ -29,6 +29,7 @@ there are 3 folders in this repository:
 - `template`: the dotfiles example template for you to work off of. this would be your home directory
 - `scripts`: scripts which come in handy when provisioning or administering your machine. you can choose to copy scripts over into your own dotfiles if you wish.
 - `docs`: step by step instructions, and supporting documentation to help you understand how it works and why its done in a certain way
+- `cli`: tool to manage backups, software, git repositories and more
 
 ## Contributing
 
