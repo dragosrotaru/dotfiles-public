@@ -1,40 +1,48 @@
-# Macbook Dotfiles Template
+# macOS dotfiles template
 
-This repository contains scripts and configuration files to help you get started with making your own dotfiles repository for MacOS systems.
+A template, scripts and guides for keeping a Mac's configuration in a version-controlled dotfiles repository, from provisioning a new machine to scheduled backups and updates.
 
-## What is a dotfiles repository
+> Archived: no longer maintained. Kept for reference. I've since moved my own setup to a homelab.
 
-dotfiles are all the files on your computer that are responsible for configuring the various software you use everyday. traditionally, they start with a `.` in you your home directory. For example, `.bash_profile` is a dotfiles which changes how your command line shell works when you login.
+## What's a dotfiles repository?
 
-A Dotfiles Repository is a version controlled repository which helps you maintain and keep track of all of that important configuration data on your machine, which you have spent so much time customizing. It is also a way to systematize the maintenance, administration and backup of your device.
+Dotfiles are the configuration files in your home directory, like `.bash_profile` or `.gitconfig`, usually named with a leading `.`. A dotfiles repository keeps them under version control, so a machine's setup can be rebuilt, audited and backed up instead of being configured by hand.
 
-## Who is this repo for
+This repo uses the "bare repository" approach. Your home directory is the working tree, and git data lives in `~/.cfg`, managed through a `dotfiles` alias:
 
-This repository is for anyone interested in creating their own dotfiles repository. it provides you with a number of useful features:
+```sh
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+```
 
-- a step by step guide with scripts for provisioning a fresh new macbook.
+## What's in it
 
-- various utility scripts which you might find useful to perform admin tasks
+| Folder | Contents |
+| --- | --- |
+| `template/` | An example home directory: `.bash_profile`, `.gitconfig` (with commit signing), a `Brewfile`, a `projects/` workspace, and launchd agents that run daily backup and update jobs |
+| `scripts/` | Shell scripts for provisioning and admin: Homebrew/apt/Nix/Node updates, macOS security and UI defaults, SSH key generation and GitHub SSH config, creating a Linux sudo user |
+| `docs/` | Step-by-step guides (see below) |
+| `cli/` | `kowalski`, an unfinished TypeScript CLI for S3 backups with retention policies, plus status reports on local git repositories and installed software |
 
-- example files and a structure to show you how to create your own dotfiles configuration
+## Guides
 
-- a status monitoring library written in TypeScript, to help you monitor the status of all your local repositories, untracked files and software updates.
+- [Why keep dotfiles](docs/dotfiles-benefits.md)
+- [Provisioning a new MacBook](docs/provision-a-macbook.md)
+- [Setting up your dotfiles repository](docs/setting-up-dotfiles.md)
+- [Backups](docs/backups.md) and [S3 backups](docs/s3-backups.md)
+- [CLI notes](docs/cli.md)
 
-- recurring background tasks to keep your data backed up, and your software up-to-date.
+## Using it
 
-## Structure
+1. Follow [Provisioning a new MacBook](docs/provision-a-macbook.md) on a fresh machine.
+2. Copy what you want from `template/` into your home directory, replacing placeholders such as `John Doe`, `john@example.com`, `SIGN_KEY`, `USERNAME` and `GITHUB_USERNAME`.
+3. Create your own bare repository as described in [Setting up your dotfiles repository](docs/setting-up-dotfiles.md).
 
-there are 3 folders in this repository:
+The scripts and launchd agents target Apple Silicon macOS with Homebrew in `/opt/homebrew`, as of 2023.
 
-- `template`: the dotfiles example template for you to work off of. this would be your home directory
-- `scripts`: scripts which come in handy when provisioning or administering your machine. you can choose to copy scripts over into your own dotfiles if you wish.
-- `docs`: step by step instructions, and supporting documentation to help you understand how it works and why its done in a certain way
-- `cli`: tool to manage backups, software, git repositories and more
+## Status of the CLI
 
-## Contributing
-
-Contributions are welcome! Please feel free to submit a PR or message me if you need help
+`kowalski` can initialise, back up to and report on S3 buckets using the AWS SDK. Restore, encryption, dry runs and Linux support were planned but never built. See [docs/index.md](docs/index.md) for the full list.
 
 ## License
 
-This project is licensed under the MIT License. See LICENSE file.
+MIT. See [LICENSE](LICENSE).
